@@ -16,7 +16,7 @@
         os << #value;                       \
         break;
 
-#define CREATE_OSTREAM_OPERATOR(enum_name, values_generator, logger)          \
+#define CREATE_OSTREAM_OPERATOR(enum_name, values_generator)                  \
     inline std::ostream &operator<<(std::ostream &os, enum_name enumVariable) \
     {                                                                         \
         switch (enumVariable)                                                 \
@@ -31,6 +31,6 @@
 
 #define CREATE_ENUM_CLASS_OSTREAM(enum_name, values_generator) \
     CREATE_ENUM_CLASS(enum_name, values_generator)             \
-    CREATE_OSTREAM_OPERATOR(enum_name, values_generator, logger)
+    CREATE_OSTREAM_OPERATOR(enum_name, values_generator)
 
 #endif // ENUM_HELPER
